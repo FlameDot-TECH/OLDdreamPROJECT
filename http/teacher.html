@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>美丽教师 - 追梦一班</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "微软雅黑", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            color: #fff;
+            padding: 48px 0 32px 0;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(41,128,185,0.13);
+            letter-spacing: 2px;
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 8px;
+            letter-spacing: 6px;
+            text-shadow: 0 2px 16px rgba(41,128,185,0.13);
+        }
+        main {
+            background: #fff;
+            margin: 56px auto 0 auto;
+            max-width: 1200px;
+            border-radius: 22px;
+            box-shadow: 0 8px 36px rgba(41,128,185,0.14);
+            padding: 54px 40px 40px 40px;
+            min-height: 400px;
+            text-align: center;
+        }
+        .teacher-title {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 44px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        .teachers-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px 44px;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+        .teacher-card {
+            background: linear-gradient(135deg, #fafdff 60%, #e0eafc 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 22px rgba(41,128,185,0.13);
+            padding: 38px 28px 26px 28px;
+            min-width: 220px;
+            max-width: 260px;
+            text-align: center;
+            border: 2.5px solid #b3d8f6;
+            transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+            position: relative;
+        }
+        .teacher-card:hover {
+            transform: translateY(-12px) scale(1.06);
+            box-shadow: 0 16px 36px rgba(41,128,185,0.20);
+            border-color: #3498db;
+            z-index: 2;
+        }
+        .teacher-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 4px 18px rgba(41,128,185,0.13);
+            margin: 0 auto 18px auto;
+            border: 4px solid #6dd5fa;
+            background: #e0eafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35em;
+            color: #217dbb;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .teacher-card:hover .teacher-photo {
+            background: #d0e6fa;
+            color: #217dbb;
+        }
+        .teacher-name {
+            font-size: 1.22em;
+            color: #217dbb;
+            font-weight: bold;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .teacher-desc {
+            font-size: 1.08em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 8px;
+            min-height: 56px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 36px;
+            padding: 14px 54px;
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.18em;
+            box-shadow: 0 2px 14px rgba(41,128,185,0.12);
+            transition: background 0.2s, transform 0.2s;
+            letter-spacing: 1px;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #217dbb 60%, #2980b9 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 1200px) {
+            main {
+                max-width: 98vw;
+                padding: 28px 2vw 28px 2vw;
+            }
+            .teachers-list {
+                gap: 28px 14px;
+            }
+        }
+        @media (max-width: 900px) {
+            .teachers-list {
+                gap: 18px 8px;
+            }
+            .teacher-card {
+                min-width: 140px;
+                max-width: 180px;
+                padding: 18px 10px 14px 10px;
+            }
+            .teacher-photo {
+                width: 80px;
+                height: 80px;
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 12px 2vw 12px 2vw;
+            }
+            .teachers-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .teacher-card {
+                min-width: 80vw;
+                max-width: 98vw;
+            }
+            header h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>美丽教师</h1>
+    </header>
+    <main>
+        <div class="teacher-title">追梦一班优秀教师团队</div>
+        <div class="teachers-list">
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    李老师
+                </div>
+                <div class="teacher-name">李老师</div>
+                <div class="teacher-desc">
+                    班主任，温柔耐心，教学严谨，深受同学们的喜爱。<br>
+                    关心同学们的学习和成长，是大家的良师益友。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    王老师
+                </div>
+                <div class="teacher-name">王老师</div>
+                <div class="teacher-desc">
+                    数学老师，讲解细致，善于启发思维，课堂气氛活跃。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    张老师
+                </div>
+                <div class="teacher-name">张老师</div>
+                <div class="teacher-desc">
+                    语文老师，文学素养高，注重人文关怀，深受学生尊敬。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    刘老师
+                </div>
+                <div class="teacher-name">刘老师</div>
+                <div class="teacher-desc">
+                    英语老师，发音标准，注重口语训练，课堂生动有趣。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    赵老师
+                </div>
+                <div class="teacher-name">赵老师</div>
+                <div class="teacher-desc">
+                    物理老师，实验丰富，善于激发学生的探索欲望。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    孙老师
+                </div>
+                <div class="teacher-name">孙老师</div>
+                <div class="teacher-desc">
+                    化学老师，讲解生动，注重实践，带领同学们做实验。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    周老师
+                </div>
+                <div class="teacher-name">周老师</div>
+                <div class="teacher-desc">
+                    生物老师，知识渊博，善于联系生活实际，激发兴趣。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    吴老师
+                </div>
+                <div class="teacher-name">吴老师</div>
+                <div class="teacher-desc">
+                    历史老师，讲故事高手，让历史变得生动有趣。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    郑老师
+                </div>
+                <div class="teacher-name">郑老师</div>
+                <div class="teacher-desc">
+                    地理老师，热爱旅行，带领同学们认识世界。
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-photo">
+                    冯老师
+                </div>
+                <div class="teacher-name">冯老师</div>
+                <div class="teacher-desc">
+                    政治老师，善于引导思考，课堂气氛活跃，关心同学成长。
+                </div>
+            </div>
+        </div>
+        <a href="追梦一班.html">返回主页面</a>
+    </main>
+</body>
+</html>

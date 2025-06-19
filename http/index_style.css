@@ -1,0 +1,199 @@
+body {
+	font-family: "微软雅黑", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+	min-height: 100vh;
+}
+
+header {
+	background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+	color: #fff;
+	padding: 38px 0 20px 0;
+	text-align: center;
+	box-shadow: 0 2px 8px rgba(41, 128, 185, 0.10);
+	letter-spacing: 2px;
+}
+
+header h1 {
+	font-size: 2.8em;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+	text-shadow: 0 2px 8px rgba(41, 128, 185, 0.08);
+}
+
+header p {
+	font-size: 1.2em;
+	margin: 0;
+	opacity: 0.92;
+}
+
+nav {
+	background: #3498db;
+	padding: 12px 0;
+	text-align: center;
+	box-shadow: 0 2px 8px rgba(41, 128, 185, 0.06);
+}
+
+nav a {
+	color: #fff;
+	margin: 0 22px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1.08em;
+	letter-spacing: 1px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover {
+	background: #217dbb;
+	color: #e0eafc;
+}
+
+main {
+	padding: 36px 20px 80px 20px;
+	min-height: 400px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+h2 {
+	color: #217dbb;
+	font-size: 2em;
+	margin-bottom: 18px;
+	letter-spacing: 2px;
+	text-align: left;
+}
+
+.fluid-photo-scroll-wrapper {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	margin: 36px 0 28px 0;
+	position: relative;
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(41, 128, 185, 0.10);
+	padding: 18px 0 18px 0;
+}
+
+.fluid-photo-list {
+	display: flex;
+	align-items: flex-end;
+	gap: 32px;
+	flex-wrap: nowrap;
+	min-width: 1200px;
+	padding-bottom: 8px;
+}
+
+.fluid-photo {
+	width: 260px;
+	height: 160px;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 4px 18px rgba(41, 128, 185, 0.13);
+	position: relative;
+	background: #e0eafc;
+	flex: 0 0 auto;
+	transition: box-shadow 0.3s, transform 0.3s;
+	z-index: 0;
+}
+
+.fluid-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* 保证图片自适应填充容器 */
+	display: block;
+}
+
+/* 滚动条美化 */
+.fluid-photo-scroll-wrapper::-webkit-scrollbar {
+	height: 10px;
+}
+
+.fluid-photo-scroll-wrapper::-webkit-scrollbar-thumb {
+	background: #b3d8f6;
+	border-radius: 5px;
+}
+
+.fluid-photo-scroll-wrapper::-webkit-scrollbar-track {
+	background: #e0eafc;
+	border-radius: 5px;
+}
+
+.notice-text {
+	font-family: "微软雅黑", Arial, sans-serif;
+	font-size: 1.13em;
+	color: #217dbb;
+	background: #eaf6ff;
+	border-left: 5px solid #3498db;
+	padding: 14px 18px;
+	border-radius: 8px;
+	margin: 32px 0 0 0;
+	box-shadow: 0 2px 8px rgba(41, 128, 185, 0.06);
+	letter-spacing: 1px;
+}
+
+footer {
+	background: #2980b9;
+	color: #fff;
+	text-align: center;
+	padding: 15px 0;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	font-size: 1em;
+	letter-spacing: 1px;
+	box-shadow: 0 -2px 8px rgba(41, 128, 185, 0.08);
+}
+
+@media (max-width: 1200px) {
+	main {
+		max-width: 98vw;
+	}
+
+	.fluid-photo-list {
+		min-width: 900px;
+	}
+}
+
+@media (max-width: 900px) {
+	.fluid-photo-list {
+		gap: 16px;
+		min-width: 700px;
+	}
+
+	.fluid-photo {
+		width: 44vw;
+		min-width: 140px;
+		max-width: 260px;
+		height: 28vw;
+		/* 高度自适应宽度，保持比例 */
+		max-height: 160px;
+	}
+}
+
+@media (max-width: 600px) {
+	main {
+		padding: 15px 5px 80px 5px;
+	}
+
+	.fluid-photo-list {
+		gap: 10px;
+		min-width: 480px;
+	}
+
+	.fluid-photo {
+		width: 80vw;
+		min-width: 120px;
+		height: 40vw;
+		/* 高度自适应宽度，保持比例 */
+		max-height: 120px;
+	}
+
+	h2 {
+		font-size: 1.2em;
+	}
+}
