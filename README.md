@@ -1,5 +1,11 @@
-# <div align="center">dreamPROJECT</div>
+<div align="center">
+
+![logo](./img/zmyblogo.png)
+
+# dreamPROJECT
 
 追梦 PROJECT - 毕业班长期项目组
 
-[点击此处进入官网](./website/index)
+*[点击此处进入官网](./website/index)*
+
+</div>
