@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>成员风采 - 追梦一班</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "微软雅黑", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            color: #fff;
+            padding: 48px 0 32px 0;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(41,128,185,0.13);
+            letter-spacing: 2px;
+        }
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 8px;
+            letter-spacing: 6px;
+            text-shadow: 0 2px 16px rgba(41,128,185,0.13);
+        }
+        main {
+            background: #fff;
+            margin: 56px auto 0 auto;
+            max-width: 1200px;
+            border-radius: 22px;
+            box-shadow: 0 8px 36px rgba(41,128,185,0.14);
+            padding: 54px 40px 40px 40px;
+            min-height: 500px;
+        }
+        .members-title {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 44px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .members-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px 44px;
+            justify-content: center;
+            margin-bottom: 36px;
+        }
+        .member-card {
+            background: linear-gradient(135deg, #fafdff 60%, #e0eafc 100%);
+            border-radius: 20px;
+            box-shadow: 0 4px 22px rgba(41,128,185,0.13);
+            padding: 38px 28px 26px 28px;
+            min-width: 220px;
+            max-width: 260px;
+            text-align: center;
+            border: 2.5px solid #b3d8f6;
+            transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+            position: relative;
+        }
+        .member-card:hover {
+            transform: translateY(-12px) scale(1.06);
+            box-shadow: 0 16px 36px rgba(41,128,185,0.20);
+            border-color: #3498db;
+            z-index: 2;
+        }
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #b3d8f6 60%, #6dd5fa 100%);
+            margin: 0 auto 16px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #2980b9;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(41,128,185,0.10);
+            letter-spacing: 2px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .member-card:hover .member-avatar {
+            background: #d0e6fa;
+            color: #217dbb;
+        }
+        .member-name {
+            font-size: 1.22em;
+            color: #217dbb;
+            margin-bottom: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .member-desc {
+            font-size: 1.08em;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.8;
+            min-height: 56px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 36px;
+            padding: 14px 54px;
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.18em;
+            box-shadow: 0 2px 14px rgba(41,128,185,0.12);
+            transition: background 0.2s, transform 0.2s;
+            letter-spacing: 1px;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #217dbb 60%, #2980b9 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 1200px) {
+            main {
+                max-width: 98vw;
+                padding: 28px 2vw 28px 2vw;
+            }
+            .members-list {
+                gap: 28px 14px;
+            }
+        }
+        @media (max-width: 900px) {
+            .members-list {
+                gap: 18px 8px;
+            }
+            .member-card {
+                min-width: 140px;
+                max-width: 180px;
+                padding: 18px 10px 14px 10px;
+            }
+            .member-avatar {
+                width: 56px;
+                height: 56px;
+                font-size: 1.2em;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 12px 2vw 12px 2vw;
+            }
+            .members-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .member-card {
+                min-width: 80vw;
+                max-width: 98vw;
+            }
+            header h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>成员风采</h1>
+    </header>
+    <main>
+        <div class="members-title">追梦一班优秀成员</div>
+        <div class="members-list">
+            <div class="member-card">
+                <div class="member-avatar">HYZ</div>
+                <div class="member-name">胡义智</div>
+                <div class="member-desc">班长，热爱篮球、足球，积极组织班级活动。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">TMK</div>
+                <div class="member-name">谭茗轲</div>
+                <div class="member-desc">班长，成绩优异，乐于助人，性格活泼开朗。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">GR</div>
+                <div class="member-name">高冉</div>
+                <div class="member-desc">学习委员，擅长绘画，在班级中，她的数学就是神一般的存在。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">WYX</div>
+                <div class="member-name">王宇翔</div>
+                <div class="member-desc">学习成绩优异，同时担任跨学科课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">HYL</div>
+                <div class="member-name">黄崟澜</div>
+                <div class="member-desc">乐于助人，性格活泼开朗，乐于助人，我们学校的校草。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">FTX</div>
+                <div class="member-name">冯廷轩</div>
+                <div class="member-desc">英语达人，口语流利,憨厚，性格温顺。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">TGM</div>
+                <div class="member-name">涂高铭</div>
+                <div class="member-desc">科技爱好者，喜欢编程，古希腊掌管电脑的神。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">ZH</div>
+                <div class="member-name">左辉</div>
+                <div class="member-desc">摄影师，科技爱好者，喜欢编程。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">LHX</div>
+                <div class="member-name">李颢轩</div>
+                <div class="member-desc">幽默风趣，活跃气氛，是大家的开心果，同时担任数学课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">XW</div>
+                <div class="member-name">徐炜</div>
+                <div class="member-desc">爱好阅读，知识面广，活泼开朗，乐于助人，同时担任数学课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">CZJ</div>
+                <div class="member-name">陈子健</div>
+                <div class="member-desc">擅长搞笑，别名鸡蛋🐣，搞笑担当。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">CZT</div>
+                <div class="member-name">陈志涛</div>
+                <div class="member-desc">擅长搞笑，跳芭蕾，别名球🏀，搞笑担当。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">ZHY</div>
+                <div class="member-name">钟鸿宇</div>
+                <div class="member-desc">前任数学课代表，虽休学半年，实力仍不减当年，希望他再创辉煌。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">JPN</div>
+                <div class="member-name">蒋沛凝</div>
+                <div class="member-desc">擅长书法，字迹优美，同时担任英语课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">ZWJ</div>
+                <div class="member-name">周文洁</div>
+                <div class="member-desc">性格活泼开朗，乐于助人，是大家的好朋友，同时担任班级卫生委员和英语课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">PRX</div>
+                <div class="member-name">潘荣轩</div>
+                <div class="member-desc">拔河的主力，节省粮食好帮手</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">GYX</div>
+                <div class="member-name">郭雨璇</div>
+                <div class="member-desc">擅长绘画，表达能力强，性格活泼开朗，乐于助人，在班中担任道德与法治课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">XHR</div>
+                <div class="member-name">徐浩然</div>
+                <div class="member-desc">擅长英语，表达能力强。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">CYC</div>
+                <div class="member-name">崔翊宸</div>
+                <div class="member-desc">擅长搞笑，别名小丑、白眼🐺。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">GY</div>
+                <div class="member-name">苟研</div>
+                <div class="member-desc">热爱学习，乐于助人，活泼开朗，在班中担任历史课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">U</div>
+                <div class="member-name">陆施琪</div>
+                <div class="member-desc">在班中担任物理课代表。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">WRC</div>
+                <div class="member-name">王睿宸</div>
+                <div class="member-desc">在班中担任体育委员、安全员，他最擅长的就是把自己身上的不安全转移到别人身上。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">XZK</div>
+                <div class="member-name">薛梓坤</div>
+                <div class="member-desc">乐于助人，品德良好。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">FBH</div>
+                <div class="member-name">封博昊</div>
+                <div class="member-desc">无</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">HYZ</div>
+                <div class="member-name">胡泽宇</div>
+                <div class="member-desc">爱好体育，擅长体育。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">LXB</div>
+                <div class="member-name">刘翔博</div>
+                <div class="member-desc">擅长跑步，乐于助人，尊师重教。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">TYR</div>
+                <div class="member-name">汤雅睿</div>
+                <div class="member-desc">热爱班级，乐于助人，性格活泼开朗。</div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">FMX</div>
+                <div class="member-name">范沐熙</div>
+                <div class="member-desc">搞笑担当，是班级的开心果。</div>
+            </div>
+        </div>
+        <a href="追梦一班.html">返回主页面</a>
+    </main>
+</body>
+</html>
