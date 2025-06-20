@@ -1,0 +1,1836 @@
+{
+	"404.html": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>404 Not Found</title>\n</head>\n<body>\n\t<h1>Not Found</h1>\n\t<p>The requested URL was not found on this server.</p>\n</body>\n</html>",
+	"index.html": "
+    <!DOCTYPE html><html lang=\"zh-cn\">
+    <head>
+        <meta charset=\"UTF-8\">
+        <title>首页 - 追梦一班</title>
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <style>
+        body {
+            font-family: \"微软雅黑\", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            color: #fff;
+            padding: 38px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(41,128,185,0.10);
+            letter-spacing: 2px;
+            position: relative;
+            animation: headerFadeIn 1.2s cubic-bezier(.23,1.02,.62,1.09);
+        }
+        @keyframes headerFadeIn {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        header::after {
+            content: \"\";
+            display: block;
+            height: 6px;
+            width: 100%;
+            background: linear-gradient(90deg, #6dd5fa 0%, #2980b9 100%);
+            opacity: 0.18;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        main {
+            background: rgba(255,255,255,0.55); /* 半透明背景 */
+            margin: 48px auto 0 auto;
+            max-width: 700px;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px 0 rgba(41,128,185,0.18), 0 1.5px 8px 0 rgba(41,128,185,0.08);
+            padding: 56px 40px 44px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+            animation: floatIn 1s cubic-bezier(.23,1.02,.62,1.09);
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1.5px solid rgba(255,255,255,0.28);
+        }
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(60px) scale(0.95);}
+            60% { opacity: 1; transform: translateY(-10px) scale(1.03);}
+            80% { transform: translateY(4px) scale(0.98);}
+            100% { opacity: 1; transform: translateY(0) scale(1);}
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 28px;
+            font-size: 2.6em;
+            font-weight: 800;
+            text-shadow: 0 2px 12px rgba(41,128,185,0.13);
+            letter-spacing: 3px;
+            animation: titleFadeIn 1.2s 0.3s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes titleFadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        p {
+            font-size: 1.25em;
+            color: #333;
+            line-height: 2.1;
+            margin-bottom: 38px;
+            letter-spacing: 1.2px;
+            animation: fadeInUp 1.2s 0.7s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        a {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 13px 44px;
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.13em;
+            box-shadow: 0 2px 16px 0 rgba(41,128,185,0.13), 0 1.5px 8px 0 rgba(41,128,185,0.08);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPopIn 1.1s 1.1s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes buttonPopIn {
+            0% { opacity: 0; transform: scale(0.7);}
+            60% { opacity: 1; transform: scale(1.08);}
+            80% { transform: scale(0.96);}
+            100% { opacity: 1; transform: scale(1);}
+        }
+        a::before {
+            content: \"\";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, #6dd5fa55 0%, transparent 80%);
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+            pointer-events: none;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #217dbb 60%, #2980b9 100%);
+            transform: translateY(-2px) scale(1.045) rotate(-1deg);
+            box-shadow: 0 6px 24px 0 rgba(41,128,185,0.18);
+        }
+        a:active::before {
+            opacity: 1;
+        }
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.22;
+            z-index: 0;
+            filter: blur(2px);
+            pointer-events: none;
+            animation: floatDot 6s ease-in-out infinite alternate;
+        }
+        .dot1 { width: 110px; height: 110px; background: #6dd5fa; top: -35px; left: -35px; animation-delay: 0s;}
+        .dot2 { width: 70px; height: 70px; background: #2980b9; bottom: -25px; right: -25px; animation-delay: 1.5s;}
+        .dot3 { width: 48px; height: 48px; background: #3498db; top: 70px; right: -20px; animation-delay: 3s;}
+        @keyframes floatDot {
+            0% { transform: translateY(0) scale(1) rotate(0deg);}
+            40% { transform: translateY(12px) scale(1.08) rotate(8deg);}
+            60% { transform: translateY(-8px) scale(0.96) rotate(-6deg);}
+            100% { transform: translateY(18px) scale(1.12) rotate(12deg);}
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 22px 6px 22px 6px;
+                margin-top: 18px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到追梦一班&首页</h1>
+    </header>
+    <main>
+        <span class=\"dot dot1\"></span>
+        <span class=\"dot dot2\"></span>
+        <span class=\"dot dot3\"></span>
+        <p style=\"font-family: 'FZShuTi', '华文行楷', 'STKaiti', 'KaiTi', cursive, '微软雅黑', Arial, sans-serif; font-size: 1.6em; color: #217dbb; font-weight: bold; letter-spacing: 2px; margin-bottom: 18px;\">
+            致所有追梦一班成员的一封信
+        </p>
+        <p>追梦一班的盛夏骊歌
+ 
+蝉鸣渐起的六月，阳光透过教室的玻璃窗，在课桌上洒下斑驳的光影。我轻轻抚摸着“追梦一班”的班牌，指尖触碰到那些曾经被我们反复擦拭的棱角，记忆如潮水般涌来，三年的时光在眼前徐徐展开。
+ 
+初入班级时，我们怀揣着各自的梦想相聚于此。教室里，大家略显羞涩地交换着自我介绍，眼中却闪烁着对未来的期待。那时的我们，就像一粒粒等待破土而出的种子，渴望在这片名为“追梦一班”的沃土上生根发芽。
+ 
+为了班级荣誉，我们携手奋斗。运动会上，跑道边此起彼伏的呐喊声是最动人的乐章。当运动员们奋力冲向终点时，我们比他们更紧张；当他们冲过红线的那一刻，我们欢呼雀跃，拥抱在一起，泪水与汗水交织，浇灌着我们共同的荣耀。文艺汇演中，从选歌、排练到舞台上的完美呈现，每个环节都凝聚着大家的心血。我们用歌声与舞蹈诠释着青春的活力，在聚光灯下绽放属于追梦一班的光芒。
+ 
+学习的道路上，我们也不曾停下脚步。遇到难题时，教室里总能看到我们围坐在一起讨论的身影。你一言我一语，思维的火花在碰撞中迸发，直到难题迎刃而解，脸上露出如释重负的笑容。老师们耐心的教导，就像温暖的阳光，照亮我们前行的道路。
+ 
+如今，毕业的钟声已然敲响。望着熟悉的教室，黑板上还留着未擦净的公式和鼓励的话语；课桌上，那些曾经偷偷刻下的小秘密，见证着我们的成长。走廊里，曾经匆匆而过的身影，如今却想放慢脚步，再多看一眼这个承载了无数回忆的地方。
+ 
+毕业不是终点，而是新的起点。我们将带着在追梦一班收获的友谊、勇气和知识，奔赴各自的远方。或许未来的道路上会有风雨，但我相信，只要想起在追梦一班的日子，想起那些一起奋斗的伙伴，我们就有了继续前行的力量。
+ 
+再见了，追梦一班！愿我们在各自的星辰大海中，继续追逐梦想，绽放属于自己的光芒。多年后，当我们再次相聚，希望还能骄傲地说：“我们是追梦一班的一员！”</p>
+        <a href=\"追梦一班.html\">返回主页面</a>
+    </main>
+</body>
+</html>",
+	"settings.rth": {
+		"home": "index.html",
+		"time": 1750407238
+	},
+	"teacher.html": "<!DOCTYPE html>
+<html lang=\"zh-cn\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>美丽教师 - 追梦一班</title>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif;
+            background: linear-gradient(135deg, #0a2ba5 0%, #009ffd 60%, #00c9ff 100%);
+            min-height: 100vh;
+        }
+        #fluid-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+        header, main {
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            color: #fff;
+            padding: 100px 0 48px 0;
+            text-align: center;
+            box-shadow: 0 2px 24px rgba(41,128,185,0.18);
+            letter-spacing: 2px;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::after {
+            content: \"\";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 120px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 80%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+            text-shadow: 0 2px 24px rgba(41,128,185,0.18), 0 1px 0 #fff;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+        .header-desc {
+            font-size: 1.3em;
+            color: #eaf6ff;
+            margin-top: 16px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 12px #2980b9, 0 1px 0 #fff;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        main {
+            background: rgba(255,255,255,0.25);
+            margin: 56px auto 0 auto;
+            max-width: 1200px;
+            border-radius: 36px;
+            box-shadow: 0 12px 48px 0 rgba(0,0,0,0.10), 0 1.5px 16px 0 rgba(0,159,253,0.13) inset;
+            padding: 64px 48px 48px 48px;
+            min-height: 400px;
+            text-align: center;
+            backdrop-filter: blur(28px) saturate(2) brightness(1.18) contrast(1.13);
+            -webkit-backdrop-filter: blur(28px) saturate(2) brightness(1.18) contrast(1.13);
+            border: 2px solid rgba(255,255,255,0.42);
+            position: relative;
+            overflow: hidden;
+        }
+        main::before {
+            content: \"\";
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            border-radius: 36px;
+            background: linear-gradient(120deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.09) 60%, rgba(255,255,255,0.15) 100%);
+            z-index: 1;
+        }
+        main::after {
+            content: \"\";
+            position: absolute;
+            left: 0; top: 0; right: 0; height: 90px;
+            border-radius: 36px 36px 0 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        main > * {
+            position: relative;
+            z-index: 3;
+        }
+        .teacher-title {
+            font-size: 2em;
+            color: #007aff;
+            margin-bottom: 54px;
+            letter-spacing: 4px;
+            font-weight: 900;
+            text-shadow:
+                0 2px 12px #e0eafc,
+                0 4px 32px rgba(0,159,253,0.22),
+                0 1px 0 #fff,
+                0 0.5vw 1vw rgba(10,43,165,0.13);
+            background: linear-gradient(90deg, #007aff 30%, #6dd5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .teachers-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 56px 52px;
+            justify-content: center;
+            margin-bottom: 44px;
+        }
+        .teacher-card {
+            background: rgba(255,255,255,0.93);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(0,122,255,0.13), 0 2px 16px 0 rgba(0,0,0,0.07);
+            padding: 48px 36px 36px 36px;
+            min-width: 240px;
+            max-width: 280px;
+            text-align: center;
+            border: 2.5px solid #e5e5ea;
+            transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s, background 0.18s;
+            position: relative;
+            overflow: hidden;
+        }
+        .teacher-card:hover {
+            transform: translateY(-18px) scale(1.08) rotate(-1deg);
+            box-shadow: 0 24px 64px rgba(0,122,255,0.22), 0 0 36px #b3d8f6;
+            border-color: #007aff;
+            background: rgba(245,246,250,0.99);
+            z-index: 2;
+        }
+        .teacher-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            box-shadow: 0 6px 24px rgba(41,128,185,0.17);
+            margin: 0 auto 22px auto;
+            border: 4px solid #6dd5fa;
+            background: linear-gradient(135deg, #e0eafc 60%, #b3d8f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35em;
+            color: #007aff;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+            user-select: none;
+        }
+        .teacher-card:hover .teacher-photo {
+            background: #d0e6fa;
+            color: #0051a8;
+            border-color: #007aff;
+            box-shadow: 0 0 32px #6dd5fa88;
+        }
+        .teacher-name {
+            font-size: 1.22em;
+            color: #222;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+        .teacher-desc {
+            font-size: 1.12em;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 10px;
+            min-height: 56px;
+        }
+        .back-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 44px;
+        }
+        a {
+            display: inline-block;
+            padding: 16px 60px;
+            background: linear-gradient(90deg, #007aff 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 32px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.22em;
+            box-shadow: 0 2px 18px rgba(0,122,255,0.14);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 1.5px;
+            border: none;
+            margin: 0;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #0051a8 60%, #2980b9 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 32px rgba(0,122,255,0.18);
+        }
+        /* 卡片动画效果 */
+        .teacher-card {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            animation: fadeInUp 0.7s cubic-bezier(.23,1.02,.32,1) forwards;
+        }
+        .teacher-card:nth-child(1) { animation-delay: 0.05s; }
+        .teacher-card:nth-child(2) { animation-delay: 0.12s; }
+        .teacher-card:nth-child(3) { animation-delay: 0.19s; }
+        .teacher-card:nth-child(4) { animation-delay: 0.26s; }
+        .teacher-card:nth-child(5) { animation-delay: 0.33s; }
+        .teacher-card:nth-child(6) { animation-delay: 0.40s; }
+        .teacher-card:nth-child(7) { animation-delay: 0.47s; }
+        .teacher-card:nth-child(8) { animation-delay: 0.54s; }
+        .teacher-card:nth-child(9) { animation-delay: 0.61s; }
+        .teacher-card:nth-child(10) { animation-delay: 0.68s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        /* 响应式优化 */
+        @media (max-width: 1200px) {
+            main {
+                max-width: 99vw;
+                padding: 32px 2vw 32px 2vw;
+            }
+            .teachers-list {
+                gap: 32px 16px;
+            }
+        }
+        @media (max-width: 900px) {
+            .teachers-list {
+                gap: 18px 8px;
+            }
+            .teacher-card {
+                min-width: 140px;
+                max-width: 180px;
+                padding: 18px 10px 14px 10px;
+            }
+            .teacher-photo {
+                width: 70px;
+                height: 70px;
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 12px 2vw 12px 2vw;
+            }
+            .teachers-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .teacher-card {
+                min-width: 80vw;
+                max-width: 98vw;
+            }
+            header h1 {
+                font-size: 1.3em;
+            }
+            .teacher-title {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id=\"fluid-canvas\"></canvas>
+    <header>
+        <h1>美丽教师</h1>
+        <div class=\"header-desc\">追梦一班</div>
+    </header>
+    <main>
+        <div class=\"teacher-title\">追梦一班优秀教师团队</div>
+        <div class=\"teachers-list\">
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    李老师
+                </div>
+                <div class=\"teacher-name\">李乐梅老师</div>
+                <div class=\"teacher-desc\">
+                    班主任，温柔耐心，教学严谨，深受同学们的喜爱。<br>
+                    关心同学们的学习和成长，是大家的良师益友。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    陈老师
+                </div>
+                <div class=\"teacher-name\">陈悦老师</div>
+                <div class=\"teacher-desc\">
+                    数学老师，讲解细致，善于启发思维，课堂气氛活跃。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    李老师
+                </div>
+                <div class=\"teacher-name\">李明玮老师</div>
+                <div class=\"teacher-desc\">
+                    语文老师，文学素养高，注重人文关怀，深受学生尊敬。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    沈老师
+                </div>
+                <div class=\"teacher-name\">沈紫怡老师</div>
+                <div class=\"teacher-desc\">
+                    英语老师，发音标准，注重口语训练，课堂生动有趣。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    李老师
+                </div>
+                <div class=\"teacher-name\">李乐梅老师</div>
+                <div class=\"teacher-desc\">
+                    物理老师，实验丰富，善于激发学生的探索欲望。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    袁老师
+                </div>
+                <div class=\"teacher-name\">袁天新老师</div>
+                <div class=\"teacher-desc\">
+                    化学老师，讲解生动，注重实践，带领同学们做实验。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    徐老师
+                </div>
+                <div class=\"teacher-name\">徐双双老师</div>
+                <div class=\"teacher-desc\">
+                    生物老师，知识渊博，善于联系生活实际，激发兴趣。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    李老师
+                </div>
+                <div class=\"teacher-name\">李滨老师</div>
+                <div class=\"teacher-desc\">
+                    历史老师，讲故事高手，让历史变得生动有趣。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    丁老师
+                </div>
+                <div class=\"teacher-name\">丁爱民老师</div>
+                <div class=\"teacher-desc\">
+                    地理老师，热爱旅行，带领同学们认识世界。
+                </div>
+            </div>
+            <div class=\"teacher-card\">
+                <div class=\"teacher-photo\">
+                    谢老师
+                </div>
+                <div class=\"teacher-name\">谢葭卉老师</div>
+                <div class=\"teacher-desc\">
+                    政治老师，善于引导思考，课堂气氛活跃，关心同学成长。
+                </div>
+            </div>
+        </div>
+        <div class=\"back-btn-wrapper\">
+            <a href=\"追梦一班.html\">返回主页面</a>
+        </div>
+    </main>
+    <script>
+    // 蓝色流体动态背景
+    const canvas = document.getElementById('fluid-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // 流体波浪参数
+    const blobs = [
+        {
+            color: 'rgba(10,43,165,0.60)',
+            baseX: 0.18, baseY: 0.22, r: 340, speed: 1.3, offset: 0
+        },
+        {
+            color: 'rgba(0,159,253,0.48)',
+            baseX: 0.82, baseY: 0.18, r: 260, speed: 1.1, offset: 1.5
+        },
+        {
+            color: 'rgba(0,201,255,0.32)',
+            baseX: 0.5, baseY: 0.92, r: 480, speed: 0.9, offset: 3.2
+        },
+        {
+            color: 'rgba(0,159,253,0.22)',
+            baseX: 0.5, baseY: 0.5, r: 320, speed: 1.5, offset: 2.7
+        }
+    ];
+
+    function drawBlob(cx, cy, r, t, color) {
+        ctx.save();
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        const points = [];
+        const waveCount = 12;
+        for (let i = 0; i < waveCount; i++) {
+            const angle = (Math.PI * 2 / waveCount) * i;
+            const wave = Math.sin(t * 1.8 + i * 1.2) * 54 + Math.cos(t * 1.3 + i * 1.7) * 38;
+            const px = cx + Math.cos(angle) * (r + wave);
+            const py = cy + Math.sin(angle) * (r + wave);
+            points.push({x: px, y: py});
+        }
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i <= waveCount; i++) {
+            const p1 = points[i % waveCount];
+            const cp1x = (points[i - 1].x + p1.x) / 2;
+            const cp1y = (points[i - 1].y + p1.y) / 2;
+            ctx.quadraticCurveTo(p1.x, p1.y, cp1x, cp1y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.filter = 'blur(22px)';
+        ctx.fill();
+        ctx.restore();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        const now = Date.now() / 1000;
+        blobs.forEach(blob => {
+            const t = now * blob.speed + blob.offset;
+            const cx = blob.baseX * width + Math.sin(t * 0.7) * 40;
+            const cy = blob.baseY * height + Math.cos(t * 0.5) * 30;
+            drawBlob(cx, cy, blob.r, t, blob.color);
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+    </script>
+</body>
+</html>",
+	"members.html": "<!DOCTYPE html>
+<html lang=\"zh-cn\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>成员风采 - 追梦一班</title>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif;
+            min-height: 100vh;
+            color: #222;
+            background: linear-gradient(120deg, #0a2ba5 0%, #009ffd 60%, #00c9ff 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+        #fluid-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+        .fluid-bg {
+            display: none;
+        }
+        header, main {
+            position: relative;
+            z-index: 1;
+        }
+        header {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+            border-bottom: 1px solid #e5e5ea;
+            text-align: center;
+            padding: 48px 0 24px 0;
+            border-radius: 0 0 32px 32px;
+        }
+        header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #222;
+            margin: 0;
+            text-shadow: 0 2px 12px #e0eafc;
+        }
+        /* 毛玻璃效果展板 */
+        main {
+            max-width: 1200px;
+            margin: 48px auto 0 auto;
+            background: rgba(255,255,255,0.28);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.07);
+            padding: 48px 32px 32px 32px;
+            min-height: 700px;
+            backdrop-filter: blur(18px) saturate(1.6);
+            -webkit-backdrop-filter: blur(18px) saturate(1.6);
+            border: 1.5px solid rgba(255,255,255,0.35);
+        }
+        .members-title {
+            font-size: 1.6em;
+            color: #007aff;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            font-weight: 700; /* 加粗 */
+            text-align: center;
+            /* 自适应阴影，增强立体感 */
+            text-shadow:
+                0 2px 8px #e0eafc,
+                0 4px 24px rgba(0,159,253,0.25),
+                0 1px 0 #fff,
+                0 0.5vw 1vw rgba(10,43,165,0.13);
+        }
+        .members-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px 32px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .member-card {
+            background: rgba(245,246,250,0.95);
+            border-radius: 24px;
+            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+            padding: 36px 24px 24px 24px;
+            min-width: 200px;
+            max-width: 220px;
+            text-align: center;
+            border: 1.5px solid #e5e5ea;
+            transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+            position: relative;
+        }
+        .member-card:hover {
+            box-shadow: 0 8px 32px 0 rgba(0,122,255,0.13), 0 0 24px #b3d8f6;
+            border-color: #007aff;
+            transform: translateY(-8px) scale(1.04);
+            z-index: 2;
+        }
+        .member-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0eafc 60%, #b3d8f6 100%);
+            margin: 0 auto 18px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            color: #007aff;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,122,255,0.08);
+            border: 2.5px solid #fff;
+            letter-spacing: 1px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s;
+            user-select: none;
+        }
+        .member-card:hover .member-avatar {
+            background: #d0e6fa;
+            color: #0051a8;
+            box-shadow: 0 0 16px #6dd5fa88;
+            border-color: #6dd5fa;
+        }
+        .member-name {
+            font-size: 1.13em;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .member-desc {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.7;
+            min-height: 48px;
+        }
+        .back-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 36px;
+        }
+        a {
+            display: inline-block;
+            /* 去除 block，改为 inline-block 以便居中 */
+            padding: 14px 48px;
+            background: linear-gradient(90deg, #007aff 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 2px 12px rgba(0,122,255,0.10);
+            transition: background 0.2s, transform 0.2s;
+            letter-spacing: 1.5px;
+            border: none;
+            margin: 0;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #0051a8 60%, #2980b9 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 1200px) {
+            main {
+                max-width: 99vw;
+                padding: 24px 2vw 24px 2vw;
+            }
+            .members-list {
+                gap: 24px 12px;
+            }
+        }
+        @media (max-width: 900px) {
+            .members-list {
+                gap: 14px 6px;
+            }
+            .member-card {
+                min-width: 140px;
+                max-width: 180px;
+                padding: 14px 8px 10px 8px;
+            }
+            .member-avatar {
+                width: 48px;
+                height: 48px;
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 8px 2vw 8px 2vw;
+            }
+            .members-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .member-card {
+                min-width: 80vw;
+                max-width: 98vw;
+            }
+            header h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id=\"fluid-canvas\"></canvas>
+    <div class=\"fluid-bg\"></div>
+    <header>
+        <h1>成员风采</h1>
+    </header>
+    <main>
+        <div class=\"members-title\">追梦一班优秀成员</div>
+        <div class=\"members-list\">
+            <!-- ...成员卡片内容不变... -->
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">HYZ</div>
+                <div class=\"member-name\">胡义智</div>
+                <div class=\"member-desc\">班长，热爱篮球、足球，积极组织班级活动。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">TMK</div>
+                <div class=\"member-name\">谭茗轲</div>
+                <div class=\"member-desc\">班长，成绩优异，乐于助人，性格活泼开朗。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">GR</div>
+                <div class=\"member-name\">高冉</div>
+                <div class=\"member-desc\">学习委员，擅长绘画，在班级中，她的数学就是神一般的存在。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">WYX</div>
+                <div class=\"member-name\">王宇翔</div>
+                <div class=\"member-desc\">学习成绩优异，同时担任跨学科课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">HYL</div>
+                <div class=\"member-name\">黄崟澜</div>
+                <div class=\"member-desc\">乐于助人，性格活泼开朗，乐于助人，我们学校的校草。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">FTX</div>
+                <div class=\"member-name\">冯廷轩</div>
+                <div class=\"member-desc\">英语达人，口语流利,憨厚，性格温顺。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">TGM</div>
+                <div class=\"member-name\">涂高铭</div>
+                <div class=\"member-desc\">科技爱好者，喜欢编程，古希腊掌管电脑的神。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">ZH</div>
+                <div class=\"member-name\">左辉</div>
+                <div class=\"member-desc\">摄影师，科技爱好者，喜欢编程。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">LHX</div>
+                <div class=\"member-name\">李颢轩</div>
+                <div class=\"member-desc\">幽默风趣，活跃气氛，是大家的开心果，同时担任数学课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">XW</div>
+                <div class=\"member-name\">徐炜</div>
+                <div class=\"member-desc\">爱好阅读，知识面广，活泼开朗，乐于助人，同时担任数学课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">CZJ</div>
+                <div class=\"member-name\">陈子健</div>
+                <div class=\"member-desc\">擅长搞笑，别名鸡蛋🐣，搞笑担当。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">CZT</div>
+                <div class=\"member-name\">陈志涛</div>
+                <div class=\"member-desc\">擅长搞笑，跳芭蕾，别名球🏀，搞笑担当。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">ZHY</div>
+                <div class=\"member-name\">钟鸿宇</div>
+                <div class=\"member-desc\">前任数学课代表，虽休学半年，实力仍不减当年，希望他再创辉煌。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">JPN</div>
+                <div class=\"member-name\">蒋沛凝</div>
+                <div class=\"member-desc\">擅长书法，字迹优美，同时担任英语课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">ZWJ</div>
+                <div class=\"member-name\">周文洁</div>
+                <div class=\"member-desc\">性格活泼开朗，乐于助人，是大家的好朋友，同时担任班级卫生委员和英语课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">PRX</div>
+                <div class=\"member-name\">潘荣轩</div>
+                <div class=\"member-desc\">拔河的主力，节省粮食好帮手</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">GYX</div>
+                <div class=\"member-name\">郭雨璇</div>
+                <div class=\"member-desc\">擅长绘画，表达能力强，性格活泼开朗，乐于助人，在班中担任道德与法治课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">XHR</div>
+                <div class=\"member-name\">徐浩然</div>
+                <div class=\"member-desc\">擅长英语，表达能力强。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">CYC</div>
+                <div class=\"member-name\">崔翊宸</div>
+                <div class=\"member-desc\">擅长搞笑，别名小丑、白眼🐺。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">GY</div>
+                <div class=\"member-name\">苟研</div>
+                <div class=\"member-desc\">热爱学习，乐于助人，活泼开朗，在班中担任历史课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">LSQ</div>
+                <div class=\"member-name\">陆施琪</div>
+                <div class=\"member-desc\">在班中担任物理课代表。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">WRC</div>
+                <div class=\"member-name\">王睿宸</div>
+                <div class=\"member-desc\">在班中担任体育委员、安全员，他最擅长的就是把自己身上的不安全转移到别人身上。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">XZK</div>
+                <div class=\"member-name\">薛梓坤</div>
+                <div class=\"member-desc\">乐于助人，品德良好。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">FBH</div>
+                <div class=\"member-name\">封博昊</div>
+                <div class=\"member-desc\">无</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">HYZ</div>
+                <div class=\"member-name\">胡泽宇</div>
+                <div class=\"member-desc\">爱好体育，擅长体育。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">LXB</div>
+                <div class=\"member-name\">刘翔博</div>
+                <div class=\"member-desc\">擅长跑步，乐于助人，尊师重教。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">TYR</div>
+                <div class=\"member-name\">汤雅睿</div>
+                <div class=\"member-desc\">热爱班级，乐于助人，性格活泼开朗。</div>
+            </div>
+            <div class=\"member-card\">
+                <div class=\"member-avatar\">FMX</div>
+                <div class=\"member-name\">范沐熙</div>
+                <div class=\"member-desc\">搞笑担当，是班级的开心果。</div>
+            </div>
+        </div>
+        <div class=\"back-btn-wrapper\">
+            <a href=\"追梦一班.html\">返回主页面</a>
+        </div>
+    </main>
+    <script>
+    // 更强对比且更强烈流动的流体动态背景
+    const canvas = document.getElementById('fluid-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // 更强烈流动的流体波浪参数
+    const blobs = [
+        {
+            color: 'rgba(10,43,165,0.60)',
+            baseX: 0.18, baseY: 0.22, r: 340, speed: 1.3, offset: 0
+        },
+        {
+            color: 'rgba(0,159,253,0.48)',
+            baseX: 0.82, baseY: 0.18, r: 260, speed: 1.1, offset: 1.5
+        },
+        {
+            color: 'rgba(0,201,255,0.32)',
+            baseX: 0.5, baseY: 0.92, r: 480, speed: 0.9, offset: 3.2
+        },
+        {
+            color: 'rgba(0,159,253,0.22)',
+            baseX: 0.5, baseY: 0.5, r: 320, speed: 1.5, offset: 2.7
+        }
+    ];
+
+    function drawBlob(cx, cy, r, t, color) {
+        ctx.save();
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        const points = [];
+        const waveCount = 12; // 增加波峰数量
+        for (let i = 0; i < waveCount; i++) {
+            const angle = (Math.PI * 2 / waveCount) * i;
+            // 增大波动幅度和频率
+            const wave = Math.sin(t * 1.8 + i * 1.2) * 54 + Math.cos(t * 1.3 + i * 1.7) * 38;
+            const px = cx + Math.cos(angle) * (r + wave);
+            const py = cy + Math.sin(angle) * (r + wave);
+            points.push({x: px, y: py});
+        }
+        ctx.moveTo(points[0].x, points[0].y);
+        for (let i = 1; i <= waveCount; i++) {
+            const p1 = points[i % waveCount];
+            const cp1x = (points[i - 1].x + p1.x) / 2;
+            const cp1y = (points[i - 1].y + p1.y) / 2;
+            ctx.quadraticCurveTo(p1.x, p1.y, cp1x, cp1y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = color;
+        ctx.filter = 'blur(22px)';
+        ctx.fill();
+        ctx.restore();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        const now = Date.now() / 1000;
+        blobs.forEach(blob => {
+            const t = now * blob.speed + blob.offset;
+            const cx = blob.baseX * width + Math.sin(t * 0.7) * 40;
+            const cy = blob.baseY * height + Math.cos(t * 0.5) * 30;
+            drawBlob(cx, cy, blob.r, t, blob.color);
+        });
+        requestAnimationFrame(animate);
+    }
+    animate();
+    </script>
+</body>
+</html>",
+	"about.html": "<!DOCTYPE html>
+<html lang=\"zh-cn\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>班级介绍 - 追梦一班</title>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <style>
+        body {
+            font-family: \"微软雅黑\", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            color: #fff;
+            padding: 38px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(41,128,185,0.10);
+            letter-spacing: 2px;
+            position: relative;
+            animation: headerFadeIn 1.2s cubic-bezier(.23,1.02,.62,1.09);
+        }
+        @keyframes headerFadeIn {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        header::after {
+            content: \"\";
+            display: block;
+            height: 6px;
+            width: 100%;
+            background: linear-gradient(90deg, #6dd5fa 0%, #2980b9 100%);
+            opacity: 0.18;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        main {
+            background: rgba(255,255,255,0.55);
+            margin: 48px auto 0 auto;
+            max-width: 700px;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px 0 rgba(41,128,185,0.18), 0 1.5px 8px 0 rgba(41,128,185,0.08);
+            padding: 56px 40px 44px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: box-shadow 0.3s, transform 0.3s;
+            animation: floatIn 1s cubic-bezier(.23,1.02,.62,1.09);
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(16px) saturate(160%);
+            -webkit-backdrop-filter: blur(16px) saturate(160%);
+            border: 1.5px solid rgba(255,255,255,0.28);
+        }
+        @keyframes floatIn {
+            0% { opacity: 0; transform: translateY(60px) scale(0.95);}
+            60% { opacity: 1; transform: translateY(-10px) scale(1.03);}
+            80% { transform: translateY(4px) scale(0.98);}
+            100% { opacity: 1; transform: translateY(0) scale(1);}
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 28px;
+            font-size: 2.6em;
+            font-weight: 800;
+            text-shadow: 0 2px 12px rgba(41,128,185,0.13);
+            letter-spacing: 3px;
+            animation: titleFadeIn 1.2s 0.3s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes titleFadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        p {
+            font-size: 1.25em;
+            color: #217dbb;
+            line-height: 2.1;
+            margin-bottom: 38px;
+            letter-spacing: 1.2px;
+            font-weight: bold;
+            animation: fadeInUp 1.2s 0.7s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        a {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 13px 44px;
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            color: #fff;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.13em;
+            box-shadow: 0 2px 16px 0 rgba(41,128,185,0.13), 0 1.5px 8px 0 rgba(41,128,185,0.08);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPopIn 1.1s 1.1s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        @keyframes buttonPopIn {
+            0% { opacity: 0; transform: scale(0.7);}
+            60% { opacity: 1; transform: scale(1.08);}
+            80% { transform: scale(0.96);}
+            100% { opacity: 1; transform: scale(1);}
+        }
+        a::before {
+            content: \"\";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, #6dd5fa55 0%, transparent 80%);
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+            pointer-events: none;
+        }
+        a:hover {
+            background: linear-gradient(90deg, #217dbb 60%, #2980b9 100%);
+            transform: translateY(-2px) scale(1.045) rotate(-1deg);
+            box-shadow: 0 6px 24px 0 rgba(41,128,185,0.18);
+        }
+        a:active::before {
+            opacity: 1;
+        }
+        /* 彩色圆点装饰 + 模糊 + 动画 */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.22;
+            z-index: 0;
+            filter: blur(2px);
+            pointer-events: none;
+            animation: floatDot 6s ease-in-out infinite alternate;
+        }
+        .dot1 { width: 110px; height: 110px; background: #6dd5fa; top: -35px; left: -35px; animation-delay: 0s;}
+        .dot2 { width: 70px; height: 70px; background: #2980b9; bottom: -25px; right: -25px; animation-delay: 1.5s;}
+        .dot3 { width: 48px; height: 48px; background: #3498db; top: 70px; right: -20px; animation-delay: 3s;}
+        @keyframes floatDot {
+            0% { transform: translateY(0) scale(1) rotate(0deg);}
+            40% { transform: translateY(12px) scale(1.08) rotate(8deg);}
+            60% { transform: translateY(-8px) scale(0.96) rotate(-6deg);}
+            100% { transform: translateY(18px) scale(1.12) rotate(12deg);}
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 22px 6px 22px 6px;
+                margin-top: 18px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>班级介绍</h1>
+    </header>
+    <main>
+        <span class=\"dot dot1\"></span>
+        <span class=\"dot dot2\"></span>
+        <span class=\"dot dot3\"></span>
+        <p>
+            在青春的长河里，有这样一方温暖而充满力量的天地——追梦一班。它不仅是一间普通的教室，更是五十五颗炽热的心汇聚成的精神家园，是承载着欢笑与泪水、拼搏与成长的青春港湾。<br>
+            追梦一班的教室永远充满生机。后墙的文化栏上，贴着同学们精心绘制的梦想地图，每一个目标都用彩色画笔勾勒，旁边还点缀着大家互相写下的鼓励话语；窗台边的绿植在阳光的滋养下茁壮成长，正如教室里的少年们蓬勃向上。这里的每一寸空间，都浸润着追梦的气息。
+ 
+课堂上，追梦一班是知识的战场。老师激情澎湃的讲解声中，同学们专注的目光紧紧跟随，积极踊跃地举手发言。遇到难题时，小组讨论热火朝天，思维的碰撞如同星火燎原，总能在热烈的交流中拨开迷雾。课间时分，教室又化作欢乐的海洋，大家分享着生活趣事，笑声在空气中回荡。有人为一道题争论得面红耳赤，转眼又相视一笑，这种纯粹的情谊，让追梦的旅程从不孤单。<br>
+            在校园的各项活动中，追梦一班始终是最耀眼的存在。运动会上，运动员们如离弦之箭在跑道上飞驰，班级的啦啦队用最响亮的呐喊为他们加油助威；文艺晚会上，同学们各展所长，用歌声、舞蹈和戏剧展现青春的风采。每一次活动，都让班级的凝聚力愈发强大，也让大家懂得：追逐梦想的路上，并肩前行的力量无可阻挡。
+ 
+这就是追梦一班，一个用梦想编织希望，用团结凝聚力量，用奋斗书写青春的集体。在这里，每个人都在为了心中的理想全力以赴，也在朝夕相处中收获了最真挚的情谊。它就像一艘扬帆起航的巨轮，载着少年们驶向远方，而这段共同追梦的岁月，将永远闪耀在记忆的长河中。
+        </p>
+        <a href=\"追梦一班.html\">返回主页面</a>
+    </main>
+</body>
+</html>",
+	"追梦一班.html": "<!DOCTYPE html>
+<html lang=\"zh-cn\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>追梦一班</title>
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",sans-serif;
+            /* 一体化蓝色渐变背景，主色调与内容容器一致 */
+            background: linear-gradient(135deg, #0a2ba5 0%, #217dbb 40%, #009ffd 80%, #00c9ff 100%);
+            min-height: 100vh;
+        }
+        nav {
+            background: rgba(52,152,219,0.98);
+            padding: 14px 0 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 16px rgba(41,128,185,0.10);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 1.2s 0.3s cubic-bezier(.23,1.02,.32,1) both;
+            backdrop-filter: blur(8px);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.13em;
+            letter-spacing: 1.5px;
+            padding: 8px 22px;
+            border-radius: 22px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(41,128,185,0.06);
+            display: inline-block;
+            position: relative;
+        }
+        nav a:hover, nav a:focus {
+            background: linear-gradient(90deg, #21bb3b 60%, #21bb3b 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px #6dd5fa55;
+            text-decoration: none;
+        }
+        header {
+            background: linear-gradient(90deg, #29b995 60%, #29b995 100%);
+            color: #fff;
+            padding: 60px 0 32px 0;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(41,128,185,0.13);
+            letter-spacing: 2px;
+            border-radius: 0 0 36px 36px;
+            position: relative;
+            overflow: hidden;
+            animation: headerFadeIn 1.1s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        @keyframes headerFadeIn {
+            from { opacity: 0; transform: translateY(-40px) scale(0.98);}
+            to   { opacity: 1; transform: translateY(0) scale(1);}
+        }
+        header::after {
+            content: \"\";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 120px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 80%);
+            z-index: 0;
+            pointer-events: none;
+            animation: shineIn 2.2s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        @keyframes shineIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+            text-shadow: 0 2px 24px rgba(41,128,185,0.18), 0 1px 0 #fff;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+            animation: titlePopIn 1.2s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        @keyframes titlePopIn {
+            from { opacity: 0; transform: scale(0.92);}
+            to   { opacity: 1; transform: scale(1);}
+        }
+        header p {
+            font-size: 1.25em;
+            margin: 0;
+            opacity: 0.95;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 12px #2980b9, 0 1px 0 #fff;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.5s 0.4s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        main {
+            padding: 48px 24px 100px 24px;
+            min-height: 400px;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* 透明度更低，弱化白色，融入背景 */
+            background: rgba(255,255,255,0.13);
+            border-radius: 32px;
+            box-shadow: 0 8px 36px rgba(41,128,185,0.10);
+            position: relative;
+            animation: mainFadeIn 1.2s 0.2s cubic-bezier(.23,1.02,.32,1) both;
+            /* 轻微磨砂，增强一体感 */
+            backdrop-filter: blur(10px) saturate(1.2);
+            -webkit-backdrop-filter: blur(10px) saturate(1.2);
+            border: 1.5px solid rgba(255,255,255,0.18);
+        }
+        @keyframes mainFadeIn {
+            from { opacity: 0; transform: translateY(60px) scale(0.98);}
+            to   { opacity: 1; transform: translateY(0) scale(1);}
+        }
+        h2 {
+            color: #217dbb;
+            font-size: 2.1em;
+            margin-bottom: 24px;
+            letter-spacing: 3px;
+            text-align: left;
+            font-weight: 800;
+            text-shadow: 0 2px 12px #e0eafc, 0 1px 0 #fff;
+            background: linear-gradient(90deg, #21bb66 30%, #6dd5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1.2s 0.4s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        .fluid-photo-scroll-wrapper {
+            /* 透明度更低，弱化白色，融入背景 */
+            background: rgba(255,255,255,0.13);
+            border-radius: 22px;
+            box-shadow: 0 4px 24px rgba(41,128,185,0.10);
+            padding: 27px 0 27px 0;
+            animation: fadeIn 1.2s 0.5s cubic-bezier(.23,1.02,.32,1) both;
+            scrollbar-color: #b3d8f6 #e0eafc;
+            scrollbar-width: thin;
+            padding-top: 5px;
+            /* 轻微磨砂，增强一体感 */
+            backdrop-filter: blur(10px) saturate(1.2);
+            -webkit-backdrop-filter: blur(10px) saturate(1.2);
+            border: 1.5px solid rgba(255,255,255,0.18);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fluid-photo-list {
+            display: flex;
+            align-items: flex-end;
+            gap: 36px;
+            flex-wrap: wrap;
+            min-width: 0;
+            padding-bottom: 8px;
+            justify-content: center;
+            width: 100%;
+        }
+        .fluid-photo {
+            width: 260px;
+            height: 160px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(41,128,185,0.14);
+            position: relative;
+            background: linear-gradient(135deg, #e0eafc 60%, #b3d8f6 100%);
+            flex: 0 0 auto;
+            transition: box-shadow 0.3s, transform 0.3s;
+            z-index: 0;
+            cursor: pointer;
+            animation: fadeInUp 0.8s cubic-bezier(.23,1.02,.32,1) forwards;
+        }
+        .fluid-photo:hover {
+            transform: scale(1.08) translateY(-8px) rotate(-1deg);
+            box-shadow: 0 16px 48px #6dd5fa88, 0 0 24px #b3d8f6;
+            z-index: 2;
+        }
+        .fluid-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .fluid-photo:hover img {
+            transform: scale(1.08) rotate(-1deg);
+        }
+        .fluid-photo::after {
+            content: \"\";
+            display: block;
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            border-radius: 20px;
+            pointer-events: none;
+            box-shadow: 0 0 0 2px rgba(0,159,253,0.08) inset;
+        }
+        .notice-text {
+            font-family: \"微软雅黑\", Arial, sans-serif;
+            font-size: 1.13em;
+            color: #217dbb;
+            background: #eaf6ff;
+            border-left: 5px solid #3498db;
+            padding: 16px 22px;
+            border-radius: 10px;
+            margin: 40px 0 0 0;
+            box-shadow: 0 2px 12px rgba(41,128,185,0.08);
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            animation: fadeIn 1.2s 0.7s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        /* 隐藏滚动条 */
+        .fluid-photo-scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .fluid-photo-scroll-wrapper {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        footer {
+            background: #2980b9;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 1.08em;
+            letter-spacing: 1.2px;
+            box-shadow: 0 -2px 12px rgba(41,128,185,0.10);
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            animation: fadeIn 1.2s 1s cubic-bezier(.23,1.02,.32,1) both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px) scale(0.98);}
+            to { opacity: 1; transform: translateY(0) scale(1);}
+        }
+        @media (max-width: 1200px) {
+            main {
+                max-width: 98vw;
+            }
+            .fluid-photo-list {
+                min-width: 900px;
+            }
+        }
+        @media (max-width: 900px) {
+            .fluid-photo-list {
+                gap: 16px;
+                min-width: 700px;
+            }
+            .fluid-photo {
+                width: 44vw;
+                min-width: 140px;
+                max-width: 260px;
+                height: 28vw;
+                max-height: 160px;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 15px 5px 80px 5px;
+            }
+            .fluid-photo-list {
+                gap: 10px;
+                min-width: 480px;
+            }
+            .fluid-photo {
+                width: 80vw;
+                min-width: 120px;
+                height: 40vw;
+                max-height: 120px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav a {
+                font-size: 1em;
+                padding: 6px 10px;
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href=\"index.html\">首页</a>
+        <a href=\"about.html\">班级介绍</a>
+        <a href=\"members.html\">成员风采</a>
+        <a href=\"teacher.html\">美丽教师</a>
+    </nav>
+    <header>
+        <h1>追梦一班</h1>
+        <p>欢迎来到追梦一班官方网站</p>
+    </header>
+    <main>
+        <h2>班级公告</h2>
+        <div class=\"fluid-photo-scroll-wrapper\" id=\"fluid-scroll\">
+            <div class=\"fluid-photo-list\" id=\"fluid-list\">
+                <!-- 保持原有图片内容 -->
+                <div class=\"fluid-photo\">
+                    <img src=\"img/32812E111F4BC2D94DCD22DB4B8B90A7.PNG\"\" alt=\"班级合影1\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/58FE051F7DDDD4D385EFC4A8233F77EE.PNG\" alt=\"班级合影2\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_4263.JPG\" alt=\"班级合影3\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_4331.JPG\" alt=\"班级合影4\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_4394.JPG\" alt=\"班级合影5\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_4506.JPG\" alt=\"班级合影6\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_20240510_090240.JPG\" alt=\"班级合影7\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_5466.JPG\" alt=\"班级合影8\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/A061448E697DE9199B1CBFE48E99C860.PNG\" alt=\"班级合影9\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_8345[1].JPG\" alt=\"班级合影10\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_20240510_101331[1].JPG\" alt=\"班级合影11\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_20241024_205741[1].jpg\" alt=\"班级合影12\">
+                </div>
+                <div class=\"fluid-photo\">
+                    <img src=\"img/IMG_20240412_173619[1].JPG\" alt=\"班级合影13\">
+                </div>
+            </div>
+        </div>
+        <div class=\"notice-text\">
+            欢迎同学提出更新建议!需更新可联系QQ:3699768541
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 追梦一班. 保留所有权利.
+    </footer>
+    <script>
+        // 自动滚动相关变量
+        const scrollWrapper = document.getElementById('fluid-scroll');
+        const photoList = document.getElementById('fluid-list');
+        let scrollSpeed = 0.6;
+        let isPaused = false;
+        let rafId = null;
+        let userScrolling = false;
+        let userScrollTimer = null;
+
+        function scrollPhotos() {
+            if (isPaused) {
+                rafId = null;
+                return;
+            }
+            scrollWrapper.scrollLeft += scrollSpeed;
+            // 无限循环滚动
+            if (scrollWrapper.scrollLeft + scrollWrapper.offsetWidth >= photoList.scrollWidth - 2) {
+                scrollWrapper.scrollLeft = 0;
+            }
+            rafId = requestAnimationFrame(scrollPhotos);
+        }
+        // 启动自动滚动
+        scrollPhotos();
+
+        // 鼠标悬停时暂停，移走时继续滚动
+        scrollWrapper.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        scrollWrapper.addEventListener('mouseleave', () => {
+            isPaused = false;
+            if (!rafId) scrollPhotos();
+        });
+
+        // 用户手动滚动时，暂停自动滚动
+        scrollWrapper.addEventListener('scroll', () => {
+            userScrolling = true;
+            isPaused = true;
+            if (userScrollTimer) clearTimeout(userScrollTimer);
+            userScrollTimer = setTimeout(() => {
+                userScrolling = false;
+                isPaused = false;
+                if (!rafId) scrollPhotos();
+            }, 1200);
+        });
+
+        // 页面隐藏时停止动画，节省资源
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            } else if (!rafId) {
+                scrollPhotos();
+            }
+        });
+
+        // 阻止图片点击冒泡到document
+        document.querySelectorAll('.fluid-photo').forEach(photo => {
+            photo.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>",
+	"README.md": "# Website Project
+
+This project is a simple website that includes the following components:
+
+## Project Structure
+
+```
+website-project
+├── src
+│   ├── index.html       # Main HTML file containing the basic structure and content of the website.
+│   ├── css
+│   │   └── style.css    # Stylesheet file for defining the styles and layout of the website.
+│   └── js
+│       └── main.js      # Main JavaScript file containing the interactive logic and functionality of the website.
+└── README.md            # Documentation and description of the project.
+```
+
+## Getting Started
+
+To get started with this project, simply open the `src/index.html` file in your web browser. You can modify the CSS and JavaScript files to customize the appearance and functionality of the website.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).",
+	"README.md.html": "<h1>Website Project</h1>\n<p>This project is a simple website that includes the following components:</p>\n<h2>Project Structure</h2>\n<pre><code>website-project\n├── src\n│   ├── index.html       # Main HTML file containing the basic structure and content of the website.\n│   ├── css\n│   │   └── style.css    # Stylesheet file for defining the styles and layout of the website.\n│   └── js\n│       └── main.js      # Main JavaScript file containing the interactive logic and functionality of the website.\n└── README.md            # Documentation and description of the project.\n</code></pre>\n<h2>Getting Started</h2>\n<p>To get started with this project, simply open the <code>src/index.html</code> file in your web browser. You can modify the CSS and JavaScript files to customize the appearance and functionality of the website.</p>\n<h2>Technologies Used</h2>\n<ul>\n<li>HTML</li>\n<li>CSS</li>\n<li>JavaScript</li>\n</ul>\n<h2>License</h2>\n<p>This project is open source and available under the <a href=\"LICENSE\">MIT License</a>.</p>\n",
+	"img/": "",
+	"img/58FE051F7DDDD4D385EFC4A8233F77EE.PNG": {
+		"size": 3282520,
+		"type": "image/png",
+		"url": "55jsiz3fqhg/zhuimengyiban/58fe051f7dddd4d385efc4a8233f77ee/1750404197"
+	},
+	"img/A061448E697DE9199B1CBFE48E99C860.PNG": {
+		"size": 4452809,
+		"type": "image/png",
+		"url": "55jsiz3fqhg/zhuimengyiban/a061448e697de9199b1cbfe48e99c860/1750404242"
+	},
+	"img/32812E111F4BC2D94DCD22DB4B8B90A7.PNG": {
+		"size": 1133729,
+		"type": "image/png",
+		"url": "55jsiz3fqhg/zhuimengyiban/32812e111f4bc2d94dcd22db4b8b90a7/1750404282"
+	},
+	"img/IMG_4263.JPG": {
+		"size": 550001,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/966133b795ae239ecf53e371cd4c5c63/1750405051"
+	},
+	"img/IMG_4331.JPG": {
+		"size": 72824,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/ad07cf84e978f2c865706ba6a7675bc4/1750405733"
+	},
+	"img/IMG_4394.JPG": {
+		"size": 73028,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/a6b99676f59789ffc55bbae5a6f87a69/1750405797"
+	},
+	"img/IMG_4506.JPG": {
+		"size": 77993,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/0bd8156ad989c9be4575eb50181047ed/1750405860"
+	},
+	"img/IMG_20240510_090240.JPG": {
+		"size": 1287605,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/2fa9be8e1fac98f01443792e39316fa0/1750405956"
+	},
+	"img/IMG_5466.JPG": {
+		"size": 3850191,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/aa9e64036fd029285051c496efd134f9/1750406024"
+	},
+	"img/A061448E697DE9199B1CBFE48E99C860[1].PNG": {
+		"size": 4452809,
+		"type": "image/png",
+		"url": "55jsiz3fqhg/zhuimengyiban/a061448e697de9199b1cbfe48e99c860/1750406163"
+	},
+	"img/IMG_20240510_101331[1].JPG": {
+		"size": 4554154,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/df3ed17f4c33f18c6bf55515e45fc8c6/1750406371"
+	},
+	"img/IMG_8345[1].JPG": {
+		"size": 2763561,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/cc66156957614526a42bd339e2126507/1750406520"
+	},
+	"img/IMG_20240510_140804[1].JPG": {
+		"size": 4299651,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/d0a22c5837f4402ff906e08b646e7cef/1750406873"
+	},
+	"img/IMG_20241024_205741[1].jpg": {
+		"size": 5232797,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/3c3ffdb868cb2f8b6d4b01f26b2e6cac/1750406922"
+	},
+	"img/IMG_20240412_173619[1].JPG": {
+		"size": 2594677,
+		"type": "image/jpeg",
+		"url": "55jsiz3fqhg/zhuimengyiban/4200aad5fefb62bf739e467176478ea2/1750407171"
+	}
+}
