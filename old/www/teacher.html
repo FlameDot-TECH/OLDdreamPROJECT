@@ -14,8 +14,6 @@
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
             background: linear-gradient(135deg, #0a2ba5 0%, #009ffd 60%, #00c9ff 100%);
             min-height: 100vh;
-            /* 新增柔光 */
-            box-shadow: 0 0 120px 0 #009ffd55 inset;
         }
         #fluid-canvas {
             position: fixed;
@@ -58,22 +56,10 @@
             font-size: 3em;
             margin-bottom: 10px;
             letter-spacing: 8px;
+            text-shadow: 0 2px 24px rgba(41,128,185,0.18), 0 1px 0 #fff;
             font-weight: 900;
             position: relative;
             z-index: 1;
-            /* 动态渐变动画 */
-            background: linear-gradient(270deg, #fff, #6dd5fa, #007aff, #fff);
-            background-size: 600% 600%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 6s ease-in-out infinite;
-            text-shadow: 0 2px 24px rgba(41,128,185,0.18), 0 1px 0 #fff;
-        }
-        @keyframes gradientMove {
-            0% {background-position:0% 50%;}
-            50% {background-position:100% 50%;}
-            100% {background-position:0% 50%;}
         }
         .header-desc {
             font-size: 1.3em;
@@ -86,7 +72,7 @@
             z-index: 1;
         }
         main {
-            background: rgba(255,255,255,0.18); /* 透明度略降，提升毛玻璃感 */
+            background: rgba(255,255,255,0.25);
             margin: 56px auto 0 auto;
             max-width: 1200px;
             border-radius: 36px;
@@ -94,10 +80,9 @@
             padding: 64px 48px 48px 48px;
             min-height: 400px;
             text-align: center;
-            /* 增强毛玻璃效果 */
-            backdrop-filter: blur(38px) saturate(2.5) brightness(1.22) contrast(1.18);
-            -webkit-backdrop-filter: blur(38px) saturate(2.5) brightness(1.22) contrast(1.18);
-            border: 2px solid rgba(255,255,255,0.32); /* 边框透明度略降 */
+            backdrop-filter: blur(28px) saturate(2) brightness(1.18) contrast(1.13);
+            -webkit-backdrop-filter: blur(28px) saturate(2) brightness(1.18) contrast(1.13);
+            border: 2px solid rgba(255,255,255,0.42);
             position: relative;
             overflow: hidden;
         }
@@ -107,8 +92,7 @@
             left: 0; top: 0; right: 0; bottom: 0;
             pointer-events: none;
             border-radius: 36px;
-            /* 增加一层淡白色渐变，提升毛玻璃质感 */
-            background: linear-gradient(120deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.11) 60%, rgba(255,255,255,0.18) 100%);
+            background: linear-gradient(120deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.09) 60%, rgba(255,255,255,0.15) 100%);
             z-index: 1;
         }
         main::after {
@@ -137,7 +121,6 @@
                 0 0.5vw 1vw rgba(10,43,165,0.13);
             background: linear-gradient(90deg, #007aff 30%, #6dd5fa 100%);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .teachers-list {
@@ -155,19 +138,15 @@
             min-width: 240px;
             max-width: 280px;
             text-align: center;
-            /* 删除边框 */
-            /* border: 2.5px solid; */
-            /* border-image: linear-gradient(120deg, #6dd5fa 0%, #007aff 100%) 1; */
+            border: 2.5px solid #e5e5ea;
             transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s, background 0.18s;
             position: relative;
             overflow: hidden;
-            /* 新增微光 */
-            box-shadow: 0 8px 32px 0 rgba(0,122,255,0.13), 0 0 24px #b3d8f6cc;
         }
         .teacher-card:hover {
             transform: translateY(-18px) scale(1.08) rotate(-1deg);
-            box-shadow: 0 24px 64px rgba(0,122,255,0.22), 0 0 36px #b3d8f6, 0 0 60px #6dd5fa88;
-            /* border-image: linear-gradient(120deg, #007aff 0%, #6dd5fa 100%) 1; */
+            box-shadow: 0 24px 64px rgba(0,122,255,0.22), 0 0 36px #b3d8f6;
+            border-color: #007aff;
             background: rgba(245,246,250,0.99);
             z-index: 2;
         }
@@ -188,15 +167,12 @@
             letter-spacing: 2px;
             transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
             user-select: none;
-            /* 新增渐变发光 */
-            box-shadow: 0 0 0 8px #6dd5fa33, 0 6px 24px rgba(41,128,185,0.17);
-            background: linear-gradient(135deg, #e0eafc 60%, #b3d8f6 100%);
         }
         .teacher-card:hover .teacher-photo {
-            background: linear-gradient(135deg, #d0e6fa 60%, #6dd5fa 100%);
+            background: #d0e6fa;
             color: #0051a8;
             border-color: #007aff;
-            box-shadow: 0 0 32px #6dd5fa88, 0 0 0 12px #007aff33;
+            box-shadow: 0 0 32px #6dd5fa88;
         }
         .teacher-name {
             font-size: 1.22em;
@@ -229,18 +205,15 @@
             font-weight: 700;
             font-size: 1.22em;
             box-shadow: 0 2px 18px rgba(0,122,255,0.14);
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s, border 0.2s;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
             letter-spacing: 1.5px;
-            border: 2.5px solid #6dd5fa;
+            border: none;
             margin: 0;
-            /* 新增发光边框 */
-            box-shadow: 0 0 0 4px #6dd5fa33, 0 2px 18px rgba(0,122,255,0.14);
         }
         a:hover {
             background: linear-gradient(90deg, #0051a8 60%, #2980b9 100%);
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 32px rgba(0,122,255,0.18), 0 0 0 8px #007aff33;
-            border-color: #007aff;
+            box-shadow: 0 8px 32px rgba(0,122,255,0.18);
         }
         /* 卡片动画效果 */
         .teacher-card {
@@ -307,9 +280,6 @@
             }
             .teacher-title {
                 font-size: 1.2em;
-            }
-            .teacher-desc {
-                font-size: 1.15em;
             }
         }
     </style>

@@ -12,26 +12,13 @@
         }
         body {
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+            /* 一体化蓝色渐变背景，主色调与内容容器一致 */
+            background: linear-gradient(135deg, #0a2ba5 0%, #217dbb 40%, #009ffd 80%, #00c9ff 100%);
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-        #fluid-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            display: block;
-        }
-        nav, header, main, footer {
-            position: relative;
-            z-index: 1;
         }
         nav {
             background: rgba(52,152,219,0.98);
-            padding: 16px 0 12px 0;
+            padding: 14px 0 10px 0;
             text-align: center;
             box-shadow: 0 2px 16px rgba(41,128,185,0.10);
             border-bottom-left-radius: 0;
@@ -50,7 +37,7 @@
             font-weight: bold;
             font-size: 1.13em;
             letter-spacing: 1.5px;
-            padding: 10px 28px;
+            padding: 8px 22px;
             border-radius: 22px;
             transition: background 0.2s, color 0.2s, box-shadow 0.2s;
             box-shadow: 0 2px 8px rgba(41,128,185,0.06);
@@ -58,15 +45,15 @@
             position: relative;
         }
         nav a:hover, nav a:focus {
-            background: linear-gradient(90deg, #217dbb 60%, #6dd5fa 100%);
+            background: linear-gradient(90deg, #21bb3b 60%, #21bb3b 100%);
             color: #fff;
             box-shadow: 0 4px 16px #6dd5fa55;
             text-decoration: none;
         }
         header {
-            background: linear-gradient(90deg, #2980b9 60%, #6dd5fa 100%);
+            background: linear-gradient(90deg, #29b995 60%, #29b995 100%);
             color: #fff;
-            padding: 64px 0 36px 0;
+            padding: 60px 0 32px 0;
             text-align: center;
             box-shadow: 0 4px 24px rgba(41,128,185,0.13);
             letter-spacing: 2px;
@@ -97,10 +84,10 @@
             to   { opacity: 1; }
         }
         header h1 {
-            font-size: 3.2em;
+            font-size: 3em;
             margin-bottom: 10px;
-            letter-spacing: 10px;
-            text-shadow: 0 2px 24px #217dbb, 0 1px 0 #fff;
+            letter-spacing: 8px;
+            text-shadow: 0 2px 24px rgba(41,128,185,0.18), 0 1px 0 #fff;
             font-weight: 900;
             position: relative;
             z-index: 1;
@@ -111,9 +98,9 @@
             to   { opacity: 1; transform: scale(1);}
         }
         header p {
-            font-size: 1.35em;
+            font-size: 1.25em;
             margin: 0;
-            opacity: 0.97;
+            opacity: 0.95;
             letter-spacing: 2px;
             text-shadow: 0 2px 12px #2980b9, 0 1px 0 #fff;
             font-weight: 500;
@@ -126,11 +113,13 @@
             min-height: 400px;
             max-width: 1200px;
             margin: 0 auto;
+            /* 透明度更低，弱化白色，融入背景 */
             background: rgba(255,255,255,0.13);
             border-radius: 32px;
             box-shadow: 0 8px 36px rgba(41,128,185,0.10);
             position: relative;
             animation: mainFadeIn 1.2s 0.2s cubic-bezier(.23,1.02,.32,1) both;
+            /* 轻微磨砂，增强一体感 */
             backdrop-filter: blur(10px) saturate(1.2);
             -webkit-backdrop-filter: blur(10px) saturate(1.2);
             border: 1.5px solid rgba(255,255,255,0.18);
@@ -141,27 +130,29 @@
         }
         h2 {
             color: #217dbb;
-            font-size: 2.2em;
-            margin-bottom: 28px;
-            letter-spacing: 4px;
+            font-size: 2.1em;
+            margin-bottom: 24px;
+            letter-spacing: 3px;
             text-align: left;
-            font-weight: 900;
+            font-weight: 800;
             text-shadow: 0 2px 12px #e0eafc, 0 1px 0 #fff;
-            background: linear-gradient(90deg, #217dbb 30%, #6dd5fa 100%);
+            background: linear-gradient(90deg, #21bb66 30%, #6dd5fa 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: fadeIn 1.2s 0.4s cubic-bezier(.23,1.02,.32,1) both;
         }
         .fluid-photo-scroll-wrapper {
+            /* 透明度更低，弱化白色，融入背景 */
             background: rgba(255,255,255,0.13);
             border-radius: 22px;
             box-shadow: 0 4px 24px rgba(41,128,185,0.10);
-            padding: 32px 0 32px 0;
+            padding: 27px 0 27px 0;
             animation: fadeIn 1.2s 0.5s cubic-bezier(.23,1.02,.32,1) both;
             scrollbar-color: #b3d8f6 #e0eafc;
             scrollbar-width: thin;
             padding-top: 5px;
+            /* 轻微磨砂，增强一体感 */
             backdrop-filter: blur(10px) saturate(1.2);
             -webkit-backdrop-filter: blur(10px) saturate(1.2);
             border: 1.5px solid rgba(255,255,255,0.18);
@@ -223,9 +214,9 @@
             color: #217dbb;
             background: #eaf6ff;
             border-left: 5px solid #3498db;
-            padding: 18px 28px;
-            border-radius: 12px;
-            margin: 44px 0 0 0;
+            padding: 16px 22px;
+            border-radius: 10px;
+            margin: 40px 0 0 0;
             box-shadow: 0 2px 12px rgba(41,128,185,0.08);
             letter-spacing: 1.2px;
             font-weight: 500;
@@ -308,7 +299,6 @@
     </style>
 </head>
 <body>
-    <canvas id="fluid-canvas"></canvas>
     <nav>
         <a href="index.html">首页</a>
         <a href="about.html">班级介绍</a>
@@ -325,7 +315,7 @@
             <div class="fluid-photo-list" id="fluid-list">
                 <!-- 保持原有图片内容 -->
                 <div class="fluid-photo">
-                    <img src="img/32812E111F4BC2D94DCD22DB4B8B90A7.PNG" alt="班级合影1">
+                    <img src="img/32812E111F4BC2D94DCD22DB4B8B90A7.PNG"" alt="班级合影1">
                 </div>
                 <div class="fluid-photo">
                     <img src="img/58FE051F7DDDD4D385EFC4A8233F77EE.PNG" alt="班级合影2">
@@ -434,80 +424,6 @@
                 e.stopPropagation();
             });
         });
-
-        // ====== 流动液体背景效果 ======
-        const canvas = document.getElementById('fluid-canvas');
-        const ctx = canvas.getContext('2d');
-        let width = window.innerWidth;
-        let height = window.innerHeight;
-        function resize() {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-        }
-        resize();
-        window.addEventListener('resize', resize);
-
-        // 流体波浪参数
-        const blobs = [
-            {
-                color: 'rgba(10,43,165,0.60)',
-                baseX: 0.18, baseY: 0.22, r: 340, speed: 1.3, offset: 0
-            },
-            {
-                color: 'rgba(0,159,253,0.48)',
-                baseX: 0.82, baseY: 0.18, r: 260, speed: 1.1, offset: 1.5
-            },
-            {
-                color: 'rgba(0,201,255,0.32)',
-                baseX: 0.5, baseY: 0.92, r: 480, speed: 0.9, offset: 3.2
-            },
-            {
-                color: 'rgba(0,159,253,0.22)',
-                baseX: 0.5, baseY: 0.5, r: 320, speed: 1.5, offset: 2.7
-            }
-        ];
-
-        function drawBlob(cx, cy, r, t, color) {
-            ctx.save();
-            ctx.globalAlpha = 1;
-            ctx.beginPath();
-            const points = [];
-            const waveCount = 12;
-            for (let i = 0; i < waveCount; i++) {
-                const angle = (Math.PI * 2 / waveCount) * i;
-                const wave = Math.sin(t * 1.8 + i * 1.2) * 54 + Math.cos(t * 1.3 + i * 1.7) * 38;
-                const px = cx + Math.cos(angle) * (r + wave);
-                const py = cy + Math.sin(angle) * (r + wave);
-                points.push({x: px, y: py});
-            }
-            ctx.moveTo(points[0].x, points[0].y);
-            for (let i = 1; i <= waveCount; i++) {
-                const p1 = points[i % waveCount];
-                const cp1x = (points[i - 1].x + p1.x) / 2;
-                const cp1y = (points[i - 1].y + p1.y) / 2;
-                ctx.quadraticCurveTo(p1.x, p1.y, cp1x, cp1y);
-            }
-            ctx.closePath();
-            ctx.fillStyle = color;
-            ctx.filter = 'blur(22px)';
-            ctx.fill();
-            ctx.restore();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            const now = Date.now() / 1000;
-            blobs.forEach(blob => {
-                const t = now * blob.speed + blob.offset;
-                const cx = blob.baseX * width + Math.sin(t * 0.7) * 40;
-                const cy = blob.baseY * height + Math.cos(t * 0.7) * 40;
-                drawBlob(cx, cy, blob.r, t, blob.color);
-            });
-            rafId = requestAnimationFrame(animate);
-        }
-        animate();
     </script>
 </body>
 </html>
