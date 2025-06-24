@@ -75,12 +75,17 @@
         }
         p {
             font-size: 1.25em;
-            color: #217dbb;
+            color: #333;
             line-height: 2.1;
             margin-bottom: 38px;
             letter-spacing: 1.2px;
-            font-weight: bold;
             animation: fadeInUp 1.2s 0.7s cubic-bezier(.23,1.02,.62,1.09) both;
+        }
+        h3 {
+            background: linear-gradient(90deg, #3498db 60%, #6dd5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1.2s 0.9s cubic-bezier(.23,1.02,.62,1.09) both;
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px);}
