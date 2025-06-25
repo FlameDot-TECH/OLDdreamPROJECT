@@ -5,5 +5,5 @@
     </div>
     <h1>dreamPROJECT</h1>
     <p>追梦 PROJECT - 毕业班长期项目组</p>
-    <p><a href="./www/帐密登录">点击此处进入官网</a><br>网站运行维护：@xHHHx </p>
+    <p><a href="./帐密登录">点击此处进入官网</a><br>网站运行维护：@xHHHx </p>
 </div>
